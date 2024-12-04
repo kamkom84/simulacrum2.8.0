@@ -36,9 +36,6 @@ public class ScoutGame extends JFrame {
     private List<ExplosionEffect> explosionEffects = new ArrayList<>();
     private Soldier[] blueSoldiers;
     private Soldier[] redSoldiers;
-//    private boolean blueSoldiersInitialized = false;
-//    private boolean redSoldiersInitialized = false;
-//    private boolean soldiersCreated = false;
 
     public ScoutGame() {
         allWorkers = new ArrayList<>();
@@ -46,7 +43,7 @@ public class ScoutGame extends JFrame {
         redSoldiers = new Soldier[0];
         blueSoldiers = new Soldier[0];
 
-        setTitle("simulacrum");
+        setTitle("simulacrum2.8");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
