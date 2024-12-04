@@ -348,7 +348,7 @@ public class ScoutGame extends JFrame {
                 positionIsValid = !isNearBase(x, y) && !isNearWorkers(x, y, workerPositions);
             } while (!positionIsValid);
 
-            resources[i] = new Resource(x, y, 5000);////////////////////////////////////////////////////////////////
+            resources[i] = new Resource(x, y, 1000);////////////////////////////////////////////////////////////////
         }
     }
 
@@ -734,21 +734,18 @@ public class ScoutGame extends JFrame {
             redSoldiers = soldiers;
             redBaseHealth -= pointsUsed;
         }
-
-        System.out.println("Created " + maxSoldiers + " soldiers for team " + team);
     }
 
     private void startSoldierCreation(String team, int baseX, int baseY) {
-        final int soldierHealthCost = 10000; /////////////////////////////////////////////////////////////////////////////
+        final int soldierCost = 100;//////////////////////////////////////////////////////////////////////////////
         final int maxRowsPerColumn = 20;
         final int columnSpacing = 30;
         final int rowSpacing = 30;
         final int targetY = baseY - 200;
         int baseHealth = team.equals("blue") ? blueBaseHealth : redBaseHealth;
-        int maxSoldiers = baseHealth / soldierHealthCost;
+        int maxSoldiers = baseHealth / soldierCost;
 
         if (maxSoldiers <= 0) {
-            System.out.println("Not enough points to create soldiers for " + team + " team.");
             return;
         }
 
@@ -776,10 +773,10 @@ public class ScoutGame extends JFrame {
 
             if (team.equals("blue")) {
                 blueSoldiers = addSoldierToArray(blueSoldiers, soldier);
-                blueBaseHealth -= soldierHealthCost;
+                blueBaseHealth -= soldierCost;
             } else {
                 redSoldiers = addSoldierToArray(redSoldiers, soldier);
-                redBaseHealth -= soldierHealthCost;
+                redBaseHealth -= soldierCost;
             }
         }
 
